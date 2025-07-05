@@ -33,6 +33,9 @@
     stateVersion = "24.05";
   };
   programs.bash.enable = true;
+  programs.bash.initExtra = ''
+    eval "$(direnv hook bash)"
+  '';
   programs.fish.enable = true;
   programs.fish.interactiveShellInit = ''
     if command -q nix-your-shell
